@@ -1,0 +1,52 @@
+# Initialize an empty dictionary to store expenses
+expenses = {}
+
+# Function to add an expense
+def add_expense():
+    item = input("Enter the item you purchased: ")
+    cost = float(input("Enter the cost of the item: Rs."))
+    expenses[item] = cost
+def calculate_total():
+         total = sum(expenses.values())
+         return total
+
+# Function to display the list of expenses
+def display_expenses():
+    if not expenses:
+        print("No expenses recorded.")
+    else:
+        print("Expense List:")
+        for item, cost in expenses.items():
+            print(f"{item}: Rs.{cost:.2f}")
+
+
+# Function to calculate the total amount spent
+# Main program loop
+if __name__== "__main__":
+    print("Welcome to the Tracking Expenditure App!")
+    
+    while True:
+        print("\nOptions:")
+        print("1. Add Expense")
+        print("2. Calculate Total")
+        print("3. Display Expenses")
+        print("4. Quit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            add_expense()
+        elif choice == "2":
+            total = calculate_total()
+            print(f"Total amount spent:  Rs.{total:.2f}")
+        elif choice == "3":
+            display_expenses()
+        elif choice == "4":
+            print("Thank you for using the Expense Tracker App!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+
+
